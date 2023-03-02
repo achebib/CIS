@@ -1,0 +1,9 @@
+---
+- name: Playbook generado automaticamente por script
+  # hosts: "{{extras.environment}}"
+  hosts: all
+  gather_facts: true
+  become: true
+  
+  roles:
+  - role: ./roles/RHEL8-CIS/

@@ -1,0 +1,6 @@
+linux:
+  hosts:
+    10.210.129.141:
+  vars:
+    ansible_user: deploy
+    #ansible_ssh_common_args: '-o ProxyCommand="ssh -o StrictHostKeyChecking=no -W %h:%p -q hcarrasco@10.38.5.13"'

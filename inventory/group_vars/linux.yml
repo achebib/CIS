@@ -1,0 +1,55 @@
+---
+packages:
+ - unzip
+ - telnet
+ - nfs-utils
+ - bc
+ - bind-utils
+ - binutils
+ - compat-openssl10
+ - ethtool
+ - curl
+ - wget
+ - glibc
+ - ksh
+ - libnsl
+ - libstdc++
+ - net-tools
+ - policycoreutils-python-utils
+ - tar
+ - zlib
+ - libXtst*i686*
+ - libXext*i686*
+ - libXrender*i686*
+ - xorg-x11-fonts-*
+ - xorg-x11-utils
+ - xorg-x11-xauth
+ - xterm
+ - libnsl.so.1
+
+
+firewall:
+ services:
+  - ssh
+ ports:
+  - '123/tcp' 
+  - '123/udp'
+
+linux:
+ services:
+  - nfs-server
+  - rpcbind
+
+root_davinci_folders:
+  - '/crc'
+  - '/crc/sw'
+  - '/crc/software_base'
+  #- '/crc/software_installer/tibco'
+  #- '/crc/software_base/jdk1.6.0_45'
+  - '/crc/software_installer'
+
+davinci_folders: 
+  - '/crc/davinci'
+  - '/crclogs'
+  - '/crc/installation'
+  - '/app'
