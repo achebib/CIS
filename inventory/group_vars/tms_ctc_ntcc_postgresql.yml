@@ -1,0 +1,23 @@
+---
+firewall:
+ services:
+  - ssh
+ ports:
+  - '123/tcp' 
+  - '123/udp'
+  - '161/udp'
+  - '162/udp'
+  - '5432/tcp'
+  - '5433/tcp'
+  - '9999/tcp'
+  - '9997/tcp'
+  - '9898/tcp' 
+  - '9897/tcp'
+  - '9000/tcp'
+  - '9001/tcp'
+  - '9694/tcp'
+  - '9695/tcp'
+
+linux:
+ services:
+  - sshd

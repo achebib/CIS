@@ -1,0 +1,81 @@
+
+[tms_itb_cassandra]
+CSNITBCS01  ansible_host=10.10.33.69 ansible_hostname=CSNITBCS01
+CSNITBCS02  ansible_host=10.10.33.70 ansible_hostname=CSNITBCS02
+CSNITBCS03  ansible_host=10.10.33.71 ansible_hostname=CSNITBCS03
+
+[tms_itb_elastic]
+ELSITBCS01  ansible_host=10.10.34.5 ansible_hostname=ELSITBCS01
+ELSITBCS02  ansible_host=10.10.34.6 ansible_hostname=ELSITBCS02
+ELSITBCS03  ansible_host=10.10.34.7 ansible_hostname=ELSITBCS03
+ELSITBCS04  ansible_host=10.10.34.8 ansible_hostname=ELSITBCS04
+ELSITBCS05  ansible_host=10.10.34.9 ansible_hostname=ELSITBCS05
+ELSITBCS06  ansible_host=10.10.34.10 ansible_hostname=ELSITBCS06
+
+
+[tms_itb_ignite]
+IGNITBCS01  ansible_host=10.10.34.69 ansible_hostname=IGNITBCS01
+IGNITBCS02  ansible_host=10.10.34.70 ansible_hostname=IGNITBCS02
+IGNITBCS03  ansible_host=10.10.34.71 ansible_hostname=IGNITBCS03
+
+[tms_itb_postgresql]
+
+PQLITBCS01  ansible_host=10.10.33.5 ansible_hostname=PQLITBCS01
+PQLITBCS02  ansible_host=10.10.33.6 ansible_hostname=PQLITBCS02
+PGPITBCS01  ansible_host=10.10.33.7 ansible_hostname=PGPITBCS01
+
+[tms_itb_testlin]
+TESTCIS  ansible_host=10.10.36.86 ansible_hostname=TESTCIS
+
+; [tms_ctc_ntcc_postgresql]
+; PQLTHN26CS01  ansible_host=10.210.129.197   ansible_hostname=PQLTHN26CS01
+; PQLTHN26CS02  ansible_host=10.210.129.198   ansible_hostname=PQLTHN26CS02
+; PGPTHN26CS01  ansible_host=10.210.129.199   ansible_hostname=PGPTHN26CS01
+
+ 
+
+
+; [tms_ctc_ntcc_ignite]
+; IGNTHN26CS01  ansible_host=10.210.130.133 ansible_hostname=IGNTHN26CS01
+; IGNTHN26CS02  ansible_host=10.210.130.134 ansible_hostname=IGNTHN26CS02
+; IGNTHN26CS03  ansible_host=10.210.130.135 ansible_hostname=IGNTHN26CS03
+; IGNTHN26CS04  ansible_host=10.210.130.136 ansible_hostname=IGNTHN26CS04
+; IGNTHN26CS05  ansible_host=10.210.130.137 ansible_hostname=IGNTHN26CS05
+
+; [tms_ctc_ntcc_cassandra]
+; CSNTHN26CS01  ansible_host=10.210.130.5 ansible_hostname=CSNTHN26CS01
+; CSNTHN26CS02  ansible_host=10.210.130.6 ansible_hostname=CSNTHN26CS02
+; CSNTHN26CS03  ansible_host=10.210.130.7 ansible_hostname=CSNTHN26CS03
+; CSNTHN26CS04  ansible_host=10.210.130.8 ansible_hostname=CSNTHN26CS04
+; CSNTHN26CS05  ansible_host=10.210.130.9 ansible_hostname=CSNTHN26CS05
+
+; [tms_ctc_ntcc_elastic]
+; ELSTHN26CS01  ansible_host=10.210.130.69 ansible_hostname=ELSTHN26CS01
+; ELSTHN26CS02  ansible_host=10.210.130.70 ansible_hostname=ELSTHN26CS02
+; ELSTHN26CS03  ansible_host=10.210.130.71 ansible_hostname=ELSTHN26CS03
+; ELSTHN26CS04  ansible_host=10.210.130.72 ansible_hostname=ELSTHN26CS04
+; ELSTHN26CS05  ansible_host=10.210.130.73 ansible_hostname=ELSTHN26CS05
+; ELSTHN26CS06  ansible_host=10.210.130.74 ansible_hostname=ELSTHN26CS06
+
+; ; [tms_ctc_ntcc_test]
+; ; MNGTHN26CS12 ansible_host=10.210.129.142 ansible_hostname=MNGTHN26CS12
+; ; MNGTHN26CS13 ansible_host=10.210.129.143 ansible_hostname=MNGTHN26CS13
+
+; [tms_ctc_ntcc_zabbix]
+; ZBXTHN26CS01  ansible_host=10.210.131.134 ansible_hostname=ZBXTHN26CS01
+; ZBXTHN26CS02  ansible_host=10.210.131.135 ansible_hostname=ZBXTHN26CS02
+; REPTHN26CS01  ansible_host=10.210.131.145 ansible_hostname=REPTHN26CS01
+
+[linux:children]
+; tms_ctc_ntcc_zabbix
+; tms_ctc_ntcc_elastic
+; tms_ctc_ntcc_cassandra
+; tms_ctc_ntcc_postgresql
+tms_itb_cassandra
+tms_itb_elastic
+tms_itb_ignite
+tms_itb_postgresql
+tms_itb_testlin
+
+; [windows:children]
+; windows_test

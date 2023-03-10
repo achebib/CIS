@@ -1,0 +1,20 @@
+---
+
+
+ansible_user 				: administrator@ttcms.evr.ee
+ansible_password 			: Ads$ER2023$
+ansible_connection 			: winrm
+ansible_port				: 5985
+ansible_winrm_transport			: ntlm
+#ansible_winrm_transport                 : basic (no funciona a veces)
+ansible_winrm_server_cert_validation 	: ignore
+ansible_winrm_scheme 			: http
+
+win_firewall:
+ services:
+  - ssh
+ ports:
+  - '1111'
+  - '1222'
+
+

@@ -1,0 +1,46 @@
+---
+#ansible_user: "{{extras.ansible_user}}"
+ansible_user: root
+user_deploy : deploy
+
+packages:
+ - unzip
+ - telnet
+ - nfs-utils
+ - bc
+ - bind-utils
+ - binutils
+ - compat-openssl10
+ - ethtool
+ - curl
+ - wget
+ - glibc
+ - ksh
+ - libnsl
+ - libstdc++
+ - net-tools
+ - policycoreutils-python-utils
+ - tar
+ - zlib
+ - libXtst*i686*
+ - libXext*i686*
+ - libXrender*i686*
+ - xorg-x11-fonts-*
+ - xorg-x11-utils
+ - xorg-x11-xauth
+ - xterm
+ - libnsl.so.1
+
+
+firewall:
+ services:
+  - ssh
+ ports:
+  - '123/tcp' 
+  - '123/udp'
+  - '161/udp'
+  - '162/udp'
+
+linux:
+ services:
+  - ssh

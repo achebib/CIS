@@ -1,0 +1,18 @@
+---
+firewall:
+ services:
+  - ssh
+ ports:
+  - '123/tcp' 
+  - '123/udp'
+  - '161/udp'
+  - '162/udp'
+
+linux:
+ services:
+  - sshd
+
+extra_repos:
+- repo: rhel-8-for-x86_64-highavailability-rpms
+  description: Red Hat Enterprise Linux 8 for x86_64 - High Availability (RPMs)
+  url: https://cdn.redhat.com/content/dist/rhel8/$releasever/x86_64/highavailability/os

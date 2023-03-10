@@ -3,7 +3,7 @@
 - name: "3.4.3.3.1 | PATCH |  Ensure ip6tables loopback traffic is configured"
   block:
       - name: "3.4.3.3.1 | PATCH |  Ensure ip6tables loopback traffic is configured | INPUT Loopback ACCEPT"
-        iptables:
+        community.general.iptables_state:
             action: append
             chain: INPUT
             in_interface: lo
@@ -11,7 +11,7 @@
             ip_version: ipv6
 
       - name: "3.4.3.3.1 | PATCH |  Ensure ip6tables loopback traffic is configured | OUTPUT Loopback ACCEPT"
-        iptables:
+        community.general.iptables_state:
             action: append
             chain: OUTPUT
             out_interface: lo
@@ -19,7 +19,7 @@
             ip_version: ipv6
 
       - name: "3.4.3.3.1 | PATCH | Ensure ip6tables loopback traffic is configured | INPUT Loopback 127.0.0.0/8"
-        iptables:
+        community.general.iptables_state:
             action: append
             chain: INPUT
             source: ::1
@@ -38,7 +38,7 @@
       - rule_3.4.3.3.1
 
 - name: "3.4.3.3.2 | PATCH | Ensure ip6tables outbound and established connections are configured"
-  iptables:
+  community.general.iptables_state:
       action: append
       chain: '{{ item.chain }}'
       protocol: '{{ item.protocol }}'
@@ -74,7 +74,7 @@
         register: rhel8cis_3_4_3_3_3_otcp
 
       - name: "3.4.3.3.3 | PATCH |Ensure ip6tables firewall rules exist for all open ports| Adjust open tcp6 ports"
-        iptables:
+        community.general.iptables_state:
             action: append
             chain: INPUT
             protocol: tcp
@@ -101,7 +101,7 @@
 - name: "3.4.3.3.4 | PATCH | Ensure ip6tables default deny firewall policy"
   block:
       - name: "3.4.3.3.4 | PATCH | Ensure ip6tables default deny firewall policy | Configure ssh to be allowed"
-        iptables:
+        community.general.iptables_state:
             chain: INPUT
             protocol: tcp
             destination_port: "22"
@@ -109,7 +109,7 @@
             ip_version: ipv6
 
       - name: "3.4.3.3.4 | PATCH | Ensure ip6tables default deny firewall policy | Set drop items"
-        iptables:
+        community.general.iptables_state:
             policy: DROP
             chain: "{{ item }}"
             ip_version: ipv6

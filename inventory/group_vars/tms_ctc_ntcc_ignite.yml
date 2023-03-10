@@ -1,0 +1,13 @@
+---
+firewall:
+ services:
+  - ssh
+ ports:
+  - '123/tcp' 
+  - '123/udp'
+  - '161/udp'
+  - '162/udp'
+
+linux:
+ services:
+  - sshd
