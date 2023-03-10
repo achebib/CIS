@@ -6,3 +6,7 @@ collections:
 - name: community.crypto
 
 - name: ansible.posix
+
+- name: community.vmware
+
+- name: community.general
