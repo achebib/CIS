@@ -1,0 +1,12 @@
+---
+
+collections:
+- name: community.general
+
+- name: community.crypto
+
+- name: ansible.posix
+
+- name: community.vmware
+
+- name: community.general
