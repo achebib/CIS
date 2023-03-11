@@ -1,6 +1,6 @@
 ---
-#ansible_user: "{{extras.ansible_user}}"
-ansible_user: deploy
+ansible_user: "{{extras.ansible_user}}"
+#ansible_user: deploy
 user_deploy : deploy
 
 packages:

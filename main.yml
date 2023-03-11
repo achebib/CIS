@@ -1,7 +1,7 @@
 ---
 - name: Playbook generado automaticamente por script
-  #hosts: "{{extras.environment}}"
-  hosts: all
+  hosts: "{{extras.environment}}"
+  #hosts: all
   gather_facts: true
   become: true
   
